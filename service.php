@@ -24,7 +24,7 @@
                     <li class="nav-item" role="presentation"><a class="nav-link" href="index.html"><i class="fas fa-tachometer-alt"></i><span>Dashboard</span></a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="profile.html"><i class="fas fa-user"></i><span>Profile</span></a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="table.html"><i class="fas fa-table"></i><span>Table</span></a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link active" href="service.html"><i class="fas fa-table"></i><span>จัดการบริการห้องพยาบาล</span></a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link active" href="service.php"><i class="fas fa-table"></i><span>จัดการบริการห้องพยาบาล</span></a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="drug.html"><i class="fas fa-table"></i><span>จัดการคลังยา</span></a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="login.html"><i class="far fa-user-circle"></i><span>Login</span></a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="register.html"><i class="fas fa-user-circle"></i><span>Register</span></a></li>

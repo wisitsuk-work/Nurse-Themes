@@ -27,7 +27,7 @@
                     <li class="nav-item" role="presentation"><a class="nav-link" href="index.html"><i class="fas fa-tachometer-alt"></i><span>Dashboard</span></a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="profile.html"><i class="fas fa-user"></i><span>Profile</span></a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="table.html"><i class="fas fa-table"></i><span>Table</span></a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="service.html"><i class="fas fa-table"></i><span>จัดการบริการห้องพยาบาล</span></a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="service.php"><i class="fas fa-table"></i><span>จัดการบริการห้องพยาบาล</span></a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="drug.html"><i class="fas fa-table"></i><span>จัดการคลังยา</span></a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="login.html"><i class="far fa-user-circle"></i><span>Login</span></a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="register.html"><i class="fas fa-user-circle"></i><span>Register</span></a></li>
@@ -204,7 +204,6 @@
                             
                             $title=  $row["title"];
 
-                            //echo "<td>".$row["title"]."</td>";
                             echo "<input type='text' class='form-control' id='inputAddress' value='$title' readonly>";
                         }
                     } else {
@@ -239,11 +238,109 @@
                 <label for="exampleFormControlTextarea1">บันทึกการรักษา</label>
                 <textarea name="treatment" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
             </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                <label for="inputState">ชื่อยา</label>
+                <select name="drug1" id="inputState" class="form-control">
+                    <option selected>Choose...</option>
+                <?php
+                
+                $sql3 = "SELECT id, name FROM drug";
+                $result3 = $conn->query($sql3);
+
+                if ($result3->num_rows > 0) {
+                    // output data of each row
+                    while($row = $result3->fetch_assoc()) {       
+                        
+                        $id=  $row["id"];
+                        $name=  $row["name"];
+
+                        echo "<option value='$id'>$name</option>";
+                    }
+                } else {
+                    echo "0 results";
+                }
+
+                ?>
+
+                </select>
+                </div>
+                <div class="form-group col-md-6">
+                <label for="inputCity">จำนวน (เม็ด)</label>
+                <input name="count1" type="text" class="form-control" id="inputCity">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                <label for="inputState">ชื่อยา</label>
+                <select name="drug2" id="inputState" class="form-control">
+                    <option selected>Choose...</option>
+                <?php
+                
+                $sql4 = "SELECT id, name FROM drug";
+                $result4 = $conn->query($sql4);
+
+                if ($result4->num_rows > 0) {
+                    // output data of each row
+                    while($row = $result4->fetch_assoc()) {       
+                        
+                        $id=  $row["id"];
+                        $name=  $row["name"];
+
+                        echo "<option value='$id'>$name</option>";
+                    }
+                } else {
+                    echo "0 results";
+                }
+
+                ?>
+
+                </select>
+                </div>
+                <div class="form-group col-md-6">
+                <label for="inputCity">จำนวน (เม็ด)</label>
+                <input name="count2" type="text" class="form-control" id="inputCity">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                <label for="inputState">ชื่อยา</label>
+                <select name="drug3" id="inputState" class="form-control">
+                    <option selected>Choose...</option>
+                <?php
+                
+                $sql5 = "SELECT id, name FROM drug";
+                $result5 = $conn->query($sql5);
+
+                if ($result5->num_rows > 0) {
+                    // output data of each row
+                    while($row = $result5->fetch_assoc()) {       
+                        
+                        $id=  $row["id"];
+                        $name=  $row["name"];
+
+                        echo "<option value='$id'>$name</option>";
+                    }
+                } else {
+                    echo "0 results";
+                }
+
+                ?>
+
+                </select>
+                </div>
+                <div class="form-group col-md-6">
+                <label for="inputCity">จำนวน (เม็ด)</label>
+                <input name="count3" type="text" class="form-control" id="inputCity">
+                </div>
+            </div>
             <center>
                 <button type="submit" class="btn btn-primary">บันทึก</button>
                 <button type="reset" class="btn btn-danger">ยกเลิก</button>
             </center>
-
         </form>
         </div>
         </div>
