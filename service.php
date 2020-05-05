@@ -24,7 +24,7 @@
                     <li class="nav-item" role="presentation"><a class="nav-link" href="index.html"><i class="fas fa-tachometer-alt"></i><span>Dashboard</span></a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="profile.html"><i class="fas fa-user"></i><span>Profile</span></a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="table.html"><i class="fas fa-table"></i><span>Table</span></a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="service.html"><i class="fas fa-table"></i><span>จัดการบริการห้องพยาบาล</span></a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link active" href="service.html"><i class="fas fa-table"></i><span>จัดการบริการห้องพยาบาล</span></a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="drug.html"><i class="fas fa-table"></i><span>จัดการคลังยา</span></a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="login.html"><i class="far fa-user-circle"></i><span>Login</span></a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="register.html"><i class="fas fa-user-circle"></i><span>Register</span></a></li>
@@ -140,90 +140,145 @@
             </div>
             </nav>
             <div class="container-fluid">
-                <h3 class="text-dark mb-4">ข้อมูลส่วนตัวผู้ป่วย</h3><form>
-  <div class="form-row">
-    <div class="form-group col-md-6">
-      <label for="inputAddress">ชื่อ</label>
-      <input type="text" class="form-control" id="inputAddress">
-    </div>
-    <div class="form-group col-md-6">
-      <label for="inputAddress">นามสกุล</label>
-      <input type="text" class="form-control" id="inputAddress">
-    </div>
-  </div>
-  <div class="form-row">
-    <div class="form-group col-md-6">
-      <label for="inputAddress">อายุ</label>
-      <input type="text" class="form-control" id="inputAddress">
-    </div>
-    <div class="form-group col-md-6">
-      <label for="inputAddress">เพศ</label>
-      <input type="text" class="form-control" id="inputAddress">
-    </div>
-  </div>
-  <div class="form-row">
-    <div class="form-group col-md-6">
-      <label for="inputAddress">คณะ</label>
-      <input type="text" class="form-control" id="inputAddress">
-    </div>
-    <div class="form-group col-md-6">
-      <label for="inputAddress">สาขา</label>
-      <input type="text" class="form-control" id="inputAddress">
-    </div>
-  </div>
-  <div class="form-row">
-    <div class="form-group col-md-6">
-      <label for="inputAddress">รหัสนักศึกษา</label>
-      <input type="text" class="form-control" id="inputAddress">
-    </div>
-    <div class="form-group col-md-6">
-      <label for="inputAddress">วันเดือนปีเกิด</label>
-      <input type="text" class="form-control" id="inputAddress">
-    </div>
-  </div>
-  <div class="form-row">
-    <div class="form-group col-md-6">
-      <label for="inputAddress">ชั้นปี</label>
-      <input type="text" class="form-control" id="inputAddress">
-    </div>
-    <div class="form-group col-md-6">
-      <label for="inputAddress">เบอร์โทร</label>
-      <input type="text" class="form-control" id="inputAddress">
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="inputAddress">ที่อยู่</label>
-    <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-  </div>
-  <div class="form-row">
-    <div class="form-group col-md-6">
-      <label for="inputCity">เมือง</label>
-      <input type="text" class="form-control" id="inputCity">
-    </div>
-    <div class="form-group col-md-4">
-      <label for="inputState">จังหวัด</label>
-      <select id="inputState" class="form-control">
-        <option selected>Choose...</option>
-        <option>...</option>
-      </select>
-    </div>
-    <div class="form-group col-md-2">
-      <label for="inputZip">รหัสไปรษณีย์</label>
-      <input type="text" class="form-control" id="inputZip">
-    </div>
-  </div>
-  <div class="form-group">
-    <div class="form-check">
-      <input class="form-check-input" type="checkbox" id="gridCheck">
-      <label class="form-check-label" for="gridCheck">
-        Check me out
-      </label>
-    </div>
-  </div>
-  <ceneter>
-    <button type="submit" class="btn btn-primary">ตกลง</button>
-  </center>
-</form></div>
+                <h3 class="text-dark mb-4">จัดการบริการห้องพยาบาล</h3>
+                <div class="row">
+                    <div class="col-md-4" style="margin-bottom: 10px;">
+                        <a href="service.php">
+                            <div class="card text-white bg-primary shadow">
+                                <div class="card-body">
+                                    <p class="text-center m-0">บันทึกการรักษา</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-4" style="margin-bottom: 10px;">
+                        <a href="#">
+                            <div class="card text-white bg-success shadow">
+                                <div class="card-body">
+                                    <p class="text-center m-0">ส่งตัวผู้ป่วย</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-4" style="margin-bottom: 10px;">
+                        <a href="#">
+                            <div class="card text-white bg-info shadow">
+                                <div class="card-body">
+                                    <p class="text-truncate text-center m-0">ยืมชุดปฐมพยาบาล</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="card shadow">
+                    <div class="card-header py-3">
+                        <p class="text-primary m-0 font-weight-bold">บันทึกการรักษา</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6 text-nowrap">
+                                <div id="dataTable_length" class="dataTables_length" aria-controls="dataTable"><label>Show&nbsp;<select class="form-control form-control-sm custom-select custom-select-sm"><option value="10" selected="">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select>&nbsp;</label></div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="text-md-right dataTables_filter" id="dataTable_filter"><label><input type="search" class="form-control form-control-sm" aria-controls="dataTable" placeholder="Search"></label></div>
+                            </div>
+                        </div>
+                        <div class="table-responsive table mt-2" id="dataTable" role="grid" aria-describedby="dataTable_info">
+                            <table class="table dataTable my-0" id="dataTable">
+                                <thead>
+                                    <tr>
+                                        <th>ชื่อ - นามสกุล</th>
+                                        <th>รหัสนักศึกษา</th>
+                                        <th>สาขา</th>
+                                        <th>ชั้นปี</th>
+                                        <th>อายุ</th>
+                                        <th>การรักษา</th>
+                                    </tr>
+                                </thead>
+
+                                <?php
+                                    include "connect.php";
+
+                                    $sql1 = "SELECT id, student_id, firstname, lastname, age, major,  class FROM profile_student";
+                                    $result1 = $conn->query($sql1);
+                                    
+                                    if ($result1->num_rows > 0) {
+                                        // output data of each row
+                                        while($row = $result1->fetch_assoc()) {    
+                                            
+                                            $id = $row["id"];
+                                            $student_id = $row["student_id"];
+                                            $firstname =  $row["firstname"];
+                                            $lastname =  $row["lastname"];
+                                            $major =  $row["major"];
+                                            $class =  $row["class"];
+                                            $age=  $row["age"];
+
+                                            echo "<tbody>";
+                                            echo "<tr>";
+                                                echo "<td>$firstname $lastname</td>";
+                                                echo "<td>$student_id</td>";
+
+                                                $sql2 = "SELECT id, title FROM major WHERE id = '$major'";
+                                                $result2 = $conn->query($sql2);
+
+                                                if ($result2->num_rows > 0) {
+                                                    // output data of each row
+                                                    while($row = $result2->fetch_assoc()) {       
+                                                        
+                                                        $title=  $row["title"];
+
+                                                        echo "<td>".$row["title"]."</td>";
+                                                    }
+                                                } else {
+                                                    echo "0 results";
+                                                }
+
+                                                echo "<td>$class</td>";
+                                                echo "<td>$age</td>";
+                                                echo "<td><a href='treatment.php?id=$id'>บันทึก</a></td>";
+                                            echo "</tr>";
+                                        echo "</tbody>";
+                                        }
+                                    } else {
+                                        echo "0 results";
+                                    }
+
+                                    $conn->close();
+
+                                ?>
+
+                                <tfoot>
+                                    <tr>
+                                        <td><strong>ชื่อ - นามสกุล</strong></td>
+                                        <td><strong>รหัสนักศึกษา</strong></td>
+                                        <td><strong>สาขา</strong></td>
+                                        <td><strong>ชั้นปี</strong></td>
+                                        <td><strong>อายุ</strong></td>
+                                        <td><strong>การรักษา</strong></td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 align-self-center">
+                                <p id="dataTable_info" class="dataTables_info" role="status" aria-live="polite">Showing 1 to 10 of 27</p>
+                            </div>
+                            <div class="col-md-6">
+                                <nav class="d-lg-flex justify-content-lg-end dataTables_paginate paging_simple_numbers">
+                                    <ul class="pagination">
+                                        <li class="page-item disabled"><a class="page-link" href="#" aria-label="Previous"><span aria-hidden="true">«</span></a></li>
+                                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                        <li class="page-item"><a class="page-link" href="#" aria-label="Next"><span aria-hidden="true">»</span></a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         <footer class="bg-white sticky-footer">
             <div class="container my-auto">

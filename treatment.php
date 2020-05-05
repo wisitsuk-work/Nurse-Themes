@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html>
 
@@ -140,90 +143,109 @@
             </div>
             </nav>
             <div class="container-fluid">
-                <h3 class="text-dark mb-4">ข้อมูลส่วนตัวผู้ป่วย</h3><form>
-  <div class="form-row">
-    <div class="form-group col-md-6">
-      <label for="inputAddress">ชื่อ</label>
-      <input type="text" class="form-control" id="inputAddress">
-    </div>
-    <div class="form-group col-md-6">
-      <label for="inputAddress">นามสกุล</label>
-      <input type="text" class="form-control" id="inputAddress">
-    </div>
-  </div>
-  <div class="form-row">
-    <div class="form-group col-md-6">
-      <label for="inputAddress">อายุ</label>
-      <input type="text" class="form-control" id="inputAddress">
-    </div>
-    <div class="form-group col-md-6">
-      <label for="inputAddress">เพศ</label>
-      <input type="text" class="form-control" id="inputAddress">
-    </div>
-  </div>
-  <div class="form-row">
-    <div class="form-group col-md-6">
-      <label for="inputAddress">คณะ</label>
-      <input type="text" class="form-control" id="inputAddress">
-    </div>
-    <div class="form-group col-md-6">
-      <label for="inputAddress">สาขา</label>
-      <input type="text" class="form-control" id="inputAddress">
-    </div>
-  </div>
-  <div class="form-row">
-    <div class="form-group col-md-6">
-      <label for="inputAddress">รหัสนักศึกษา</label>
-      <input type="text" class="form-control" id="inputAddress">
-    </div>
-    <div class="form-group col-md-6">
-      <label for="inputAddress">วันเดือนปีเกิด</label>
-      <input type="text" class="form-control" id="inputAddress">
-    </div>
-  </div>
-  <div class="form-row">
-    <div class="form-group col-md-6">
-      <label for="inputAddress">ชั้นปี</label>
-      <input type="text" class="form-control" id="inputAddress">
-    </div>
-    <div class="form-group col-md-6">
-      <label for="inputAddress">เบอร์โทร</label>
-      <input type="text" class="form-control" id="inputAddress">
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="inputAddress">ที่อยู่</label>
-    <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-  </div>
-  <div class="form-row">
-    <div class="form-group col-md-6">
-      <label for="inputCity">เมือง</label>
-      <input type="text" class="form-control" id="inputCity">
-    </div>
-    <div class="form-group col-md-4">
-      <label for="inputState">จังหวัด</label>
-      <select id="inputState" class="form-control">
-        <option selected>Choose...</option>
-        <option>...</option>
-      </select>
-    </div>
-    <div class="form-group col-md-2">
-      <label for="inputZip">รหัสไปรษณีย์</label>
-      <input type="text" class="form-control" id="inputZip">
-    </div>
-  </div>
-  <div class="form-group">
-    <div class="form-check">
-      <input class="form-check-input" type="checkbox" id="gridCheck">
-      <label class="form-check-label" for="gridCheck">
-        Check me out
-      </label>
-    </div>
-  </div>
-  <ceneter>
-    <button type="submit" class="btn btn-primary">ตกลง</button>
-  </center>
-</form></div>
+                <h3 class="text-dark mb-4">บันทึกการรักษา</h3>
+                <form  method="post" action="insert_treatment.php">
+
+                <?php
+
+                    $user_firstname = $_SESSION['valid_firstname'];
+
+                    include "connect.php";
+
+                    $sql = "SELECT id, student_id, firstname, lastname, age, sex FROM profile_student WHERE id = $_GET[id]";
+                    $result = $conn->query($sql);
+
+                    if ($result->num_rows > 0) {
+                        // output data of each row
+                        while($row = $result->fetch_assoc()) {
+
+                            $id = $row["id"];
+                            $student_id = $row["student_id"];
+                            $firstname =  $row["firstname"];
+                            $lastname =  $row["lastname"];
+                            $age=  $row["age"];
+                            $sex=  $row["sex"];
+
+                        }
+                    } else {
+                        echo "0 results";
+                    }
+
+                ?>
+    
+            <label>ผู้ลงบันทึกการรักษา <?php echo $user_firstname;?></label>
+            <input name="student_id" type="hidden" class="form-control" value="<?php echo $student_id;?>">
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                <label for="inputAddress">ชื่อ</label>
+                <input type="text" class="form-control" id="inputAddress" value="<?php echo $firstname;?>" readonly>
+                </div>
+                <div class="form-group col-md-6">
+                <label for="inputAddress">นามสกุล</label>
+                <input type="text" class="form-control" id="inputAddress" value="<?php echo $lastname;?>" readonly>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                <label for="inputAddress">อายุ</label>
+                <input type="text" class="form-control" id="inputAddress" value="<?php echo $age;?>" readonly>
+                </div>
+                <div class="form-group col-md-6">
+                <label for="inputAddress">เพศ</label>
+
+                <?php
+                
+                    $sql2 = "SELECT id, title FROM sex WHERE id = '$sex'";
+                    $result2 = $conn->query($sql2);
+
+                    if ($result2->num_rows > 0) {
+                        // output data of each row
+                        while($row = $result2->fetch_assoc()) {       
+                            
+                            $title=  $row["title"];
+
+                            //echo "<td>".$row["title"]."</td>";
+                            echo "<input type='text' class='form-control' id='inputAddress' value='$title' readonly>";
+                        }
+                    } else {
+                        echo "0 results";
+                    }
+
+                ?>
+
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                <label for="inputAddress">น้ำหนัก</label>
+                <input name="weight" type="text" class="form-control" id="inputAddress">
+                </div>
+                <div class="form-group col-md-6">
+                <label for="inputAddress">ส่วนสูง</label>
+                <input name="height" type="text" class="form-control" id="inputAddress">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                <label for="inputAddress">ค่าชีพจร</label>
+                <input name="pulse" type="text" class="form-control" id="inputAddress">
+                </div>
+                <div class="form-group col-md-6">
+                <label for="inputAddress">อุณหภูมิร่างกาย</label>
+                <input name="temperature" type="text" class="form-control" id="inputAddress">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlTextarea1">บันทึกการรักษา</label>
+                <textarea name="treatment" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            </div>
+            <center>
+                <button type="submit" class="btn btn-primary">บันทึก</button>
+                <button type="reset" class="btn btn-danger">ยกเลิก</button>
+            </center>
+
+        </form>
+        </div>
         </div>
         <footer class="bg-white sticky-footer">
             <div class="container my-auto">
@@ -237,6 +259,13 @@
     <script src="assets/js/bs-init.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.js"></script>
     <script src="assets/js/theme.js"></script>
+
+    <?php
+
+        $conn->close();
+
+    ?>
+
 </body>
 
 </html>
